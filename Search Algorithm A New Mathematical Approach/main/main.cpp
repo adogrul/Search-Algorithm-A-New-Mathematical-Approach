@@ -16,14 +16,23 @@ int main(int argc, char const *argv[])
         -Örnek Senaryo Kullanımı-
         asciiMeanSearch.stringLength(word);
             -Terminalde yazdırılacak-
+        
         asciiMeanSearch.calculateMean(word);
             -Terminalde yazdırılacak-
+        
         words = asciiMeanSearch.takeWords(fileDirectory);
+            -Dosyadan Okunan Kelimeleri aldık-
+
         int size = words.size();
-         int* _searchSpaceMean = new int[size];
+        int* _searchSpaceMean = new int[size];
+        
         for(auto word : words){
             _searchSpaceMean.push_back(asciiMeanSearch.calculateMean((char*)word.c_str()));
         }
+        -Dosyadan Okunan Kelimelerin Ortalamalarını Hesapladık-
+        -Ortalamaları bi r vectorde tuttuk-
+
+        //Bu Adımdan sonra yazılacak algoritmaya Göre işlem yapılacak
         
         
         delete[] _searchSpaceMean;

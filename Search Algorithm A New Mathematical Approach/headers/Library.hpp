@@ -33,17 +33,7 @@ public:
     int stringLength(char * _string)  {
         int length = strlen(_string);
         cout << "Length of " << _string << " is " << length << endl;
-        return _StringLength;
-    }
-
-        int get_file_size(const std::string& _directory){
-        /*(TR) İmlecin konumunu döndürüp dosya boyutunu bulunur.
-        (EN) Returns the position of the cursor and finds the file size.
-        */
-        std::ifstream file(_directory, std::ios::in | std::ios::binary);
-        file.seekg(0, std::ios::end); 
-        int fileSize = file.tellg();
-        return fileSize;
+        return length;
     }
 
     void setString(const char* str) {

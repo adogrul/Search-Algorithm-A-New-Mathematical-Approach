@@ -32,6 +32,7 @@ public:
 
     int stringLength(char * _string)  {
         int length = strlen(_string);
+        cout << "Length of " << _string << " is " << length << endl;
         return _StringLength;
     }
 
@@ -63,6 +64,8 @@ public:
             sum += static_cast<int>(_string[i]);
         }
         _meanOfString = sum / length;
+
+        cout << "Mean of " << _string << " is " << _meanOfString << endl;
         return _meanOfString;
     }
 

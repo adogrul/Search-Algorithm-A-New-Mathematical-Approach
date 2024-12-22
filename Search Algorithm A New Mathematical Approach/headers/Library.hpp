@@ -16,7 +16,7 @@ class ASCIIMeanSearch {
 private:
     int _StringLength;
     float _meanOfString;
-    char* _string;
+    std::string _string;
 
 public:
 
@@ -26,24 +26,16 @@ public:
     }
 
     ~ASCIIMeanSearch() {
-        delete[] _string;
+
     }
 
-    int stringLength(char * _string)  {
+    int stringLength( const char * _string)  {
         int length = strlen(_string);
         cout << "Length of " << _string << " is " << length << endl;
         return length;
     }
 
-    void setString(const char* str) {
-        if (str) {
-            size_t length = std::min(strlen(str), static_cast<size_t>(_StringLength));
-            strncpy(_string, str, length);
-            _string[length] = '\0';
-        }
-    }
-
-    int calculateMean(char* _string) {
+    int calculateMean(const char* _string) {
         if (!_string || strlen(_string) == 0) {
             return 0;
         }

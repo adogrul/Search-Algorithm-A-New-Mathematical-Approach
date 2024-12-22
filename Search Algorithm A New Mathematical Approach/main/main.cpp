@@ -43,6 +43,7 @@ int main(int argc, char const *argv[])
    First Section
    ASCIIMeanSearch asciiMeanSearch;
     std::string word = "accumsan";
+    asciiMeanSearch.setString((char*)word.c_str());
     asciiMeanSearch.stringLength((char*)word.c_str());
     asciiMeanSearch.calculateMean((char*)word.c_str());
 */

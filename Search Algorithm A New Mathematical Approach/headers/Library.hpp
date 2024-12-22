@@ -24,8 +24,7 @@ public:
         : _StringLength(maxLength), _meanOfString(0){
         _string = new char[_StringLength + 1]();
     }
-
-    // Yıkıcı (Destructor)
+    
     ~ASCIIMeanSearch() {
         delete[] _string;
     }

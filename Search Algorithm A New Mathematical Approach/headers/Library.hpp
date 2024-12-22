@@ -15,7 +15,7 @@ using namespace std;
 class ASCIIMeanSearch {
 private:
     int _StringLength;
-    int _meanOfString;
+    float _meanOfString;
     char* _string;
 
 public:
@@ -24,7 +24,7 @@ public:
         : _StringLength(maxLength), _meanOfString(0){
         _string = new char[_StringLength + 1]();
     }
-    
+
     ~ASCIIMeanSearch() {
         delete[] _string;
     }
@@ -47,10 +47,12 @@ public:
         if (!_string || strlen(_string) == 0) {
             return 0;
         }
-        int sum = 0;
-        int length = stringLength(_string);
+        float sum = 0;
+        float length = static_cast<float> (stringLength(_string));
         for (int i = 0; i < length; ++i) {
-            sum += static_cast<int>(_string[i]);
+            cout<<static_cast <float>(_string[i])<<" - ";
+            sum += static_cast<float>(_string[i]);
+
         }
         _meanOfString = sum / length;
 

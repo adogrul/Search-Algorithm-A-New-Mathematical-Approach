@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <string>
+#include "../headers/Library.hpp"
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -10,7 +11,7 @@ int main(int argc, char const *argv[])
         -Değişken Tanımlaması-
         ASCIIMeanSearch asciiMeanSearch;
         string fileDirectory = "C:\\Users\\User\\Desktop\\test.txt";
-        string word = "test";
+        string word = "accumsan";
         std::vector<std::string> words;
 
         -Örnek Senaryo Kullanımı-
@@ -37,6 +38,11 @@ int main(int argc, char const *argv[])
         
         delete[] _searchSpaceMean;
     */
+
+   ASCIIMeanSearch asciiMeanSearch;
+    std::string word = "accumsan";
+    asciiMeanSearch.stringLength((char*)word.c_str());
+    asciiMeanSearch.calculateMean((char*)word.c_str());
 
 
     return 0;

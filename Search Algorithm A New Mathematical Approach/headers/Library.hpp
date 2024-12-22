@@ -87,7 +87,6 @@ std::vector<std::string> takeWords(const std::string& _fileDirectory) {
     } else {
         std::cerr << "Dosya açılamadı: " << _fileDirectory << std::endl;
     }
-
     return _words;
 }
 

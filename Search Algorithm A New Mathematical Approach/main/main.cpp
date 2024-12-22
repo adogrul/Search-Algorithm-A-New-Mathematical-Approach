@@ -15,10 +15,10 @@ int main(int argc, char const *argv[])
         std::vector<std::string> words;
 
         -Örnek Senaryo Kullanımı-
-        asciiMeanSearch.stringLength(word);
+        asciiMeanSearch.stringLength(word); //Tamamlandı
             -Terminalde yazdırılacak-
         
-        asciiMeanSearch.calculateMean(word);
+        asciiMeanSearch.calculateMean(word); //Tamamlandı
             -Terminalde yazdırılacak-
         
         words = asciiMeanSearch.takeWords(fileDirectory);
@@ -39,11 +39,24 @@ int main(int argc, char const *argv[])
         delete[] _searchSpaceMean;
     */
 
+   /*
+   First Section
    ASCIIMeanSearch asciiMeanSearch;
     std::string word = "accumsan";
     asciiMeanSearch.stringLength((char*)word.c_str());
     asciiMeanSearch.calculateMean((char*)word.c_str());
+*/
 
+/*
+Second  Section
+    std::vector<std::string> words;
+    ASCIIMeanSearch asciiMeanSearch;
+    string fileDirectory = "../Test.txt";
+    words = asciiMeanSearch.takeWords(fileDirectory);
+    for(int i = 0; i < 20; i++){
+        cout<<words[i]<<" ";
+    }
+    */
 
     return 0;
 }

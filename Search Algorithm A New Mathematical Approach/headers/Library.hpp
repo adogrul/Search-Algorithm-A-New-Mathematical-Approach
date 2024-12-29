@@ -31,7 +31,7 @@ public:
 
     int stringLength( const char * _string)  {
         int length = strlen(_string);
-        cout << "Length of " << _string << " is " << length << endl;
+        //cout << "Length of " << _string << " is " << length << endl;
         return length;
     }
 
@@ -41,14 +41,18 @@ public:
         }
         float sum = 0;
         float length = static_cast<float> (stringLength(_string));
+        cout<<"(";
         for (int i = 0; i < length; ++i) {
+            
             cout<<static_cast <float>(_string[i])<<" - ";
+            
             sum += static_cast<float>(_string[i]);
 
         }
+        cout<<") ";
         _meanOfString = sum / length;
 
-        cout << "Mean of " << _string << " is " << _meanOfString << endl;
+        cout << "Mean of \"" << _string << "\" is => " << _meanOfString << endl;
         return _meanOfString;
     }
 
@@ -83,7 +87,7 @@ std::vector<std::string> takeWords(const std::string& _fileDirectory) {
 }
 
 
-    //search()
+
 
 };
 

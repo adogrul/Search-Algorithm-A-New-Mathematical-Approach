@@ -40,10 +40,9 @@ int main(int argc, char const *argv[])
     */
 
    /*
-   First Section
+   //First Section
    ASCIIMeanSearch asciiMeanSearch;
-    std::string word = "accumsan";
-    asciiMeanSearch.setString((char*)word.c_str());
+    std::string word = "deterjan";
     asciiMeanSearch.stringLength((char*)word.c_str());
     asciiMeanSearch.calculateMean((char*)word.c_str());
 */
@@ -58,6 +57,15 @@ Second  Section
         cout<<words[i]<<" ";
     }
     */
-
+/*
+   //Third Section
+    std::vector<std::string> words;
+    ASCIIMeanSearch asciiMeanSearch;
+    string fileDirectory = "../Test.txt";
+    words = asciiMeanSearch.takeWords(fileDirectory);
+    for(int i = 0; i < 10; i++){
+        asciiMeanSearch.calculateMean((char*)words[i].c_str());
+    }
+*/
     return 0;
 }

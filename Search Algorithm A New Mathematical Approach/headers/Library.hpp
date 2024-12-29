@@ -56,7 +56,7 @@ public:
         return _meanOfString;
     }
 
-std::vector<std::string> takeWords(const std::string& _fileDirectory) {
+    std::vector<std::string> takeWords(const std::string& _fileDirectory) {
     std::vector<std::string> _words;
     ifstream file(_fileDirectory);      
     string line;
@@ -86,9 +86,30 @@ std::vector<std::string> takeWords(const std::string& _fileDirectory) {
     return _words;
 }
 
+    void search(const std::string& _fileDrirectory_ , std::string _word , std::vector<std::string> _wordSpace){  
+        /*
+        1- tüm kelimeleri al
+        2- fonksiyon içine aranacak kelimeyi gir
+        3- tüm kelimelerin ortalamasını bir diziye at
+        4- kelimenin ortalaması ile eşleşenleri gruplandır
+        5- aynı grup içindeki kelimeleri sayısal depğil string olarak ara
+        6- eşleşenleri ekrana yazdır
+        */
+       
+    std::vector<int> _searchSpaceMean;
+    _wordSpace = takeWords(_fileDrirectory_);
+    int size = stringLength((char*)_word.c_str());
+    int _meanOfString = calculateMean((char*)_word.c_str());
+    for(auto word : _wordSpace){
+        calculateMean((char*)word.c_str());
+        if (_meanOfString == calculateMean((char*)word.c_str()))
+        {
+            _searchSpaceMean.push_back(calculateMean((char*)word.c_str()));
+        }   
+    }
 
 
-
+    }
 };
 
 #endif // LIBRARY_HPP

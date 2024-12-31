@@ -35,25 +35,22 @@ public:
         return length;
     }
 
-    int calculateMean(const char* _string) {
+    float calculateMean(const char* _string) {
         if (!_string || strlen(_string) == 0) {
             return 0;
         }
         float sum = 0;
         float length = static_cast<float> (stringLength(_string));
-        cout<<"(";
         for (int i = 0; i < length; ++i) {
             
-            cout<<static_cast <float>(_string[i])<<" - ";
             
             sum += static_cast<float>(_string[i]);
 
         }
-        cout<<") ";
         _meanOfString = sum / length;
 
         cout << "Mean of \"" << _string << "\" is => " << _meanOfString << endl;
-        return _meanOfString;
+        return static_cast<float> (_meanOfString);
     }
 
     std::vector<std::string> takeWords(const std::string& _fileDirectory) {
@@ -85,6 +82,7 @@ public:
     }
     return _words;
 }
+    
 
     void search(const std::string& _fileDrirectory_ , std::string _word , std::vector<std::string> _wordSpace){  
         /*
@@ -95,17 +93,35 @@ public:
         5- aynı grup içindeki kelimeleri sayısal depğil string olarak ara
         6- eşleşenleri ekrana yazdır
         */
+       /*
+       (ENG)
+            1- take all words
+            2- enter the word to be searched into the function
+            3- put the average of all words in an array
+            4- group the ones that match the average of the word
+            5- search the words in the same group not numerically but as a string
+            6- print the matches to the screen
+       */
        
-    std::vector<int> _searchSpaceMean;
+    std::vector<string> _searchSpaceMean;
     _wordSpace = takeWords(_fileDrirectory_);
     int size = stringLength((char*)_word.c_str());
-    int _meanOfString = calculateMean((char*)_word.c_str());
+    float _meanOfString = calculateMean((char*)_word.c_str());
     for(auto word : _wordSpace){
-        calculateMean((char*)word.c_str());
-        if (_meanOfString == calculateMean((char*)word.c_str()))
+        float temp = calculateMean((char*)word.c_str());
+        if (_meanOfString == temp)
         {
-            _searchSpaceMean.push_back(calculateMean((char*)word.c_str()));
+            _searchSpaceMean.push_back((char*)word.c_str());
         }   
+    }
+    _wordSpace.clear();
+    
+    for(auto word : _searchSpaceMean){
+        _wordSpace.push_back(word);
+    }
+    for(auto word : _wordSpace){
+        float temp = calculateMean((char*)word.c_str());
+        cout<<"---------------------------------------\n"<<word<<" "<<temp<<endl;
     }
 
 

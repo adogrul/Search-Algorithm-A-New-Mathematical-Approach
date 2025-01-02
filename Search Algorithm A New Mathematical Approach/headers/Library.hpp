@@ -47,9 +47,9 @@ public:
             sum += static_cast<float>(_string[i]);
 
         }
+        
         _meanOfString = sum / length;
-
-        cout << "Mean of \"" << _string << "\" is => " << _meanOfString << endl;
+        cout << "Mean of " << _string << " is " << _meanOfString << endl;
         return static_cast<float> (_meanOfString);
     }
 
@@ -120,8 +120,10 @@ public:
         _wordSpace.push_back(word);
     }
     for(auto word : _wordSpace){
-        float temp = calculateMean((char*)word.c_str());
-        cout<<"---------------------------------------\n"<<word<<" "<<temp<<endl;
+        std::string temp = _word;
+        if(temp == word){
+            cout<<"---------------------------------------\n"<<word<<" ";
+        }
     }
 
 

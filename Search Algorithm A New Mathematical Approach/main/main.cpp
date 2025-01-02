@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <string>
+#include <chrono>
+#include <iostream>
 #include "../headers/Library.hpp"
 using namespace std;
 
@@ -99,16 +101,21 @@ Second  Section
     }
 */
 
-/*
+auto start = std::chrono::high_resolution_clock::now();
     //Last Section
     ASCIIMeanSearch asciiMeanSearch;
     std::vector<std::string> words;
-    std::string fileDirectory = "../Test.txt";
-    std::string word = "cursus";
+    std::string fileDirectory = "../10000words.txt";
+    std::string word = "imperdiet";
+    cout << "The word we are looking for is: " << word<<"\n-----------------------------------------------------------" << endl; 
+
     words = asciiMeanSearch.takeWords(fileDirectory);
     asciiMeanSearch.search(fileDirectory, word, words);
-*/
-    
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+
+    std::cout << "Elapsed time: " << elapsed.count() << " seconds\n";
 
     return 0;
 }

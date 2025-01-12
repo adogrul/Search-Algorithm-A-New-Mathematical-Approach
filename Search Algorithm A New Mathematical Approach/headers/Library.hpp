@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cctype>
 #include <filesystem>
-using namespace std;
+
 
 
 class ASCIIMeanSearch {
@@ -30,7 +30,7 @@ public:
 
     int stringLength( const char * _string)  {
         int length = strlen(_string);
-        //cout << "Length of " << _string << " is " << length << endl;
+        //std::cout << "Length of " << _string << " is " << length << endl;
         return length;
     }
 
@@ -48,20 +48,21 @@ public:
         }
         
         _meanOfString = sum / length;
-       // cout << "Mean of " << _string << " is " << _meanOfString << endl;
+       // cout << "Mean of " << _string << " is " << _meanOfString << endl; if youu want to check results and see mean of string u can open this block 
+       // this will cause a performance degradation of 10 times
         return static_cast<float> (_meanOfString);
     }
 
     std::vector<std::string> takeWords(const std::string& _fileDirectory) {
     std::vector<std::string> _words;
     ifstream file(_fileDirectory);      
-    string line;
+    std::string line;
 
     if (file.is_open()) {
         
         while (std::getline(file, line)) {
-            stringstream ss(line);
-            string word;
+            std::stringstream ss(line);
+            std::string word;
 
             while (ss >> word) {
                 word.erase(
@@ -77,7 +78,7 @@ public:
 
         file.close();
     } else {
-        std::cerr << "Dosya açılamadı: " << _fileDirectory << std::endl;
+        std::cerr << "File Cannot Open: " << _fileDirectory << std::endl;
     }
     return _words;
 }
@@ -102,7 +103,7 @@ public:
             6- print the matches to the screen
        */
        
-    std::vector<string> _searchSpaceMean;
+    std::vector<std::string> _searchSpaceMean;
     _wordSpace = takeWords(_fileDrirectory_);
     int size = stringLength((char*)_word.c_str());
     float _meanOfString = calculateMean((char*)_word.c_str());
@@ -121,7 +122,7 @@ public:
     for(auto word : _wordSpace){
         std::string temp = _word;
         if(temp == word){
-            cout<<"---------------------------------------\n"<<word<<" ";
+            std::cout<<"---------------------------------------\n"<<word<<" ";
         }
     }
 

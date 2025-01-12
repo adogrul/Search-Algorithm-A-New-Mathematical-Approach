@@ -24,9 +24,7 @@ public:
         _string = new char[_StringLength + 1]();
     }
 
-    ~ASCIIMeanSearch() {
-
-    }
+    ~ASCIIMeanSearch() {}
 
     int stringLength( const char * _string)  {
         int length = strlen(_string);

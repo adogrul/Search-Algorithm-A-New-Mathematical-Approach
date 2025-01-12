@@ -37,8 +37,6 @@ int main(int argc, char const *argv[])
 
         //Bu Adımdan sonra yazılacak algoritmaya Göre işlem yapılacak
         
-        
-        delete[] _searchSpaceMean;
 
         (ENG)
         -Variable Definition-
@@ -67,8 +65,6 @@ int main(int argc, char const *argv[])
         -We kept the averages in a vector-
 
         //After this step, the process will be done according to the algorithm to be written
-
-        delete[] _searchSpaceMean;
 
     */
 
@@ -105,8 +101,8 @@ auto start = std::chrono::high_resolution_clock::now();
     //Last Section
     ASCIIMeanSearch asciiMeanSearch;
     std::vector<std::string> words;
-    std::string fileDirectory = "../10000words.txt";
-    std::string word = "imperdiet";
+    std::string fileDirectory = "../100words.txt";
+    std::string word = "mango";
     cout << "The word we are looking for is: " << word<<"\n-----------------------------------------------------------" << endl; 
 
     words = asciiMeanSearch.takeWords(fileDirectory);
@@ -115,7 +111,7 @@ auto start = std::chrono::high_resolution_clock::now();
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
 
-    std::cout << "Elapsed time: " << elapsed.count() << " seconds\n";
+    std::cout << "\nElapsed time: " << elapsed.count() << " seconds\n";
 
     return 0;
 }

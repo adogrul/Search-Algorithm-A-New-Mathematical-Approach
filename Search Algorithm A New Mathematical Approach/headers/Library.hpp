@@ -20,8 +20,7 @@ private:
 
 public:
 
-    ASCIIMeanSearch(int maxLength = 0)
-        : _StringLength(maxLength), _meanOfString(0){
+    ASCIIMeanSearch(int maxLength = 0) : _StringLength(maxLength), _meanOfString(0){
         _string = new char[_StringLength + 1]();
     }
 
@@ -49,7 +48,7 @@ public:
         }
         
         _meanOfString = sum / length;
-        cout << "Mean of " << _string << " is " << _meanOfString << endl;
+       // cout << "Mean of " << _string << " is " << _meanOfString << endl;
         return static_cast<float> (_meanOfString);
     }
 

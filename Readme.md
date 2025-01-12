@@ -56,21 +56,17 @@ Performs a search to find words with the same ASCII mean as the given word. Outp
 #include "library.hpp"
 
 int main() {
-    ASCIIMeanSearch meanSearch;
-
-    // File directory containing text
-    std::string fileDirectory = "example.txt";
-
-    // Word to search for
-    std::string targetWord = "hello";
-
-    // Vector to store matching words
-    std::vector<std::string> matches;
-
-    // Perform the search
-    meanSearch.search(fileDirectory, targetWord, matches);
-
-    return 0;
+   ASCIIMeanSearch asciiMeanSearch;
+   std::vector<std::string> words;
+   std::string fileDirectory = "testSample.txt";
+   std::string word = "_testWord_";
+   words = asciiMeanSearch.takeWords(fileDirectory);
+   cout << "The word we are looking for is: " << word<<"\n-----------------------------------------------------------" << endl; 
+    
+    asciiMeanSearch.search(
+      fileDirectory,
+      word,
+      words);
 }
 ```
 

@@ -78,7 +78,7 @@ hello world test example
 If the target word is `hello`, the output might look like:
 ```
 ---------------------------------------
-hello world
+hello
 ```
 
 ## File Structure
